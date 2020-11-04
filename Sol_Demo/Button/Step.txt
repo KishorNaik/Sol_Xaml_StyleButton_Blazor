@@ -1,0 +1,23 @@
+﻿Razor Class Library
+
+
+Step 4:
+Create a Button Component inside the RCL solution.
+
+Server Side Blazor
+
+Step 1: 
+Add RCL reference into server side blazor.
+
+Step 2:
+Go to startup.cs file and add the following service in the ConfigureService method.
+
+ services.AddButton();
+
+ Step 3:
+ go to _Import.razor file. Add the following namespace.
+
+ @using Button
+
+ Step 4:
+ Add Button Component in index.razor file.

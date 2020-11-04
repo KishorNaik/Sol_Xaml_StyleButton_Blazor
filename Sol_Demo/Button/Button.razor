@@ -1,0 +1,19 @@
+﻿@if (IsLoad == true)
+{
+
+    <style>
+    .buttonStyle {
+        background-color:@((!String.IsNullOrEmpty(this.Background)) ? this.Background : "");
+        color:@((!string.IsNullOrEmpty(this.Foreground)) ? this.Foreground : "");
+        border-color:@((!string.IsNullOrEmpty(this.BorderBrush)) ? this.BorderBrush : "");
+        border-width:@((this.BorderThickness!=null) ? Convert.ToString(this.BorderThickness)+"px" : "");
+        border-radius:@((this.BorderRadius!=null) ? Convert.ToString(this.BorderRadius)+"px" : "");
+        height:@((this.Height!=null)? Convert.ToString(this.Height) + "px" : "");
+        width:@((this.Width!=null)? Convert.ToString(this.Width) + "px" : "");
+        margin:@(!string.IsNullOrEmpty(this.Margin) ? this.SetMargin() : "");
+        padding:@((!string.IsNullOrEmpty(this.Padding)) ? this.SetPadding() : "");
+    }
+    </style>
+
+    <button id="@this.Id" @onclick="this.OnClick" class="buttonStyle">@this.Content</button>
+}
